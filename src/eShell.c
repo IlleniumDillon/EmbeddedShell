@@ -2,7 +2,7 @@
  * @Author: IlleniumDillon 147900130@qq.com
  * @Date: 2023-01-15 12:57:29
  * @LastEditors: IlleniumDillon 147900130@qq.com
- * @LastEditTime: 2023-01-16 11:41:37
+ * @LastEditTime: 2023-01-16 20:06:08
  * @FilePath: \EmbeddedShell\src\eShell.c
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -64,7 +64,7 @@ static char *shell_strtok(char *string_org, const char *demial)
 void shell_init(shell* sh)
 {
     extern cmdFunction static_cmd[];
-    sh->cmd = static_cmd;
+    sh->cmd = _cmd_start_add;
     shell_printf("%s",sh->user_name);
 	shellHist_queueInit(&sh->cmdHist);
 	shellHist_queueAddCmd(&sh->cmdHist, "ls cmd");
